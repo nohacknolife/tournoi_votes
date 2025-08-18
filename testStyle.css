@@ -1,0 +1,322 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Sidebar adaptative avec hauteur réduite */
+.sidebar {
+  background-color: #1a1d23;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  /* 🔹 Ligne à modifier pour augmenter la largeur */
+  width: min(98vw, 1400px); /* Avant : min(95vw, 1200px) */
+
+  height: min(99vh, 700px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* 🔹 Scrollbar assortie au slider */
+.sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #1a1d23; /* Couleur du slider */
+  border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #3b4250; /* Bouton du scroll */
+  border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #4b5364;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #4ade80;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  background-color: #2a2f3a;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.tab:hover {
+  background-color: #3b4250;
+}
+
+.tab.active {
+  background-color: #4ade80;
+  color: black;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+/* Grille spécifique pour Équipe Fair-play */
+#equipe-fairplay .player-grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px; /* plus d’espace entre les logos */
+  justify-items: center; /* centre les logos dans leur colonne */
+}
+
+.player-card {
+  background-color: #2a2f3a;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.player-card img {
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Images plus grandes uniquement pour l'onglet Équipe Fair-play */
+#equipe-fairplay .player-card img {
+  width: 240px; /* 2x plus large */
+  height: 240px; /* 2x plus haut */
+  border-radius: 12px; /* un peu plus arrondi pour équilibrer */
+  object-fit: contain; /* affiche le logo entier sans le couper */
+  background-color: #fff; /* fond blanc pour les logos transparents */
+  padding: 10px; /* petit espace autour du logo */
+}
+
+.player-card h3 {
+  font-size: 1em;
+  margin: 8px 0 4px;
+  color: white;
+}
+
+.player-card p {
+  font-size: 0.9em;
+  color: #bbb;
+}
+
+.player-card:hover {
+  background-color: #3b4250;
+}
+
+.player-card.active {
+  border: 2px solid #4ade80;
+  background-color: #3b4250;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.field {
+  background-color: #2a2f3a;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  color: #bbb;
+}
+
+.field input {
+  width: 100%;
+  padding: 8px;
+  background-color: #1a1d23;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.actions button,
+.actions select {
+  background-color: #3b4250;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.actions button:hover,
+.actions select:hover {
+  background-color: #4b5364;
+}
+
+.testing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+#sendAll {
+  position: absolute;
+  bottom: 20px;
+  left: 5%; /* retrait en pourcentage */
+  right: 5%; /* retrait en pourcentage */
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: not-allowed;
+  background-color: #555; /* gris par défaut */
+  color: white;
+  transition: background-color 0.3s, cursor 0.3s;
+}
+
+#sendAll.active {
+  background-color: #4ade80; /* vert actif */
+  cursor: pointer;
+}
+
+/* Overlay plein écran */
+.payment-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Boîte centrale */
+.payment-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 350px;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.6s ease;
+}
+
+.payment-box h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #222;
+}
+
+.payment-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.payment-box button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.payment-box button:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

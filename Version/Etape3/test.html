@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoostFiller UI</title>
+    <link rel="stylesheet" href="testStyle.css">
+</head>
+<body>
+    <div class="sidebar">
+        <header class="header">
+            <div class="logo">🚀 BoostFiller</div>
+            <button class="back-btn">← Back</button>
+        </header>
+
+        <!-- Onglets -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="fields">Fields</button>
+            <button class="tab" data-tab="testing">Testing</button>
+            <button class="tab" data-tab="datasets">Datasets</button>
+            <button class="tab" data-tab="settings">Settings</button>
+        </nav>
+
+        <!-- Contenu onglet Fields -->
+        <div class="tab-content active" id="fields">
+            <div class="fields">
+                <div class="field">
+                    <label>full_name</label>
+                    <input type="text" value="John Doe">
+                    <div class="actions">
+                        <button>Generate Data</button>
+                        <select>
+                            <option>Dataset</option>
+                        </select>
+                        <button>Test Regex</button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>email</label>
+                    <input type="text" value="john@doe.com">
+                    <div class="actions">
+                        <button>Generate Data</button>
+                        <select>
+                            <option>Dataset</option>
+                        </select>
+                        <button>Test Regex</button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>full_address</label>
+                    <input type="text" value="25 Union Square W, New York">
+                    <div class="actions">
+                        <button>Generate Data</button>
+                        <select>
+                            <option>Dataset</option>
+                        </select>
+                        <button>Test Regex</button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>phone_number</label>
+                    <input type="text" value="+1 (646) 555-9032">
+                    <div class="actions">
+                        <button>Generate Data</button>
+                        <select>
+                            <option>Dataset</option>
+                        </select>
+                        <button>Test Regex</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenu onglet Testing -->
+        <div class="tab-content" id="testing">
+            <div class="testing-grid">
+                <div class="player-card">
+                    <img src="myPicture.jpeg" alt="Joueur 1">
+                    <h3>John Doe</h3>
+                    <p>Équipe Alpha</p>
+                </div>
+                <div class="player-card">
+                    <img src="https://via.placeholder.com/80" alt="Joueur 2">
+                    <h3>Jane Smith</h3>
+                    <p>Équipe Beta</p>
+                </div>
+                <div class="player-card">
+                    <img src="https://via.placeholder.com/80" alt="Joueur 3">
+                    <h3>Mike Lee</h3>
+                    <p>Équipe Gamma</p>
+                </div>
+                <div class="player-card">
+                    <img src="https://via.placeholder.com/80" alt="Joueur 4">
+                    <h3>Sara Kim</h3>
+                    <p>Équipe Delta</p>
+                </div>
+                <div class="player-card">
+                    <img src="https://via.placeholder.com/80" alt="Joueur 5">
+                    <h3>Tom Clark</h3>
+                    <p>Équipe Alpha</p>
+                </div>
+                <div class="player-card">
+                    <img src="https://via.placeholder.com/80" alt="Joueur 6">
+                    <h3>Lisa Wong</h3>
+                    <p>Équipe Beta</p>
+                </div>
+                <div class="player-card">
+                    <img src="https://via.placeholder.com/80" alt="Joueur 7">
+                    <h3>James Brown</h3>
+                    <p>Équipe Gamma</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Contenu onglet Datasets -->
+        <div class="tab-content" id="datasets">
+            <p>Contenu Datasets...</p>
+        </div>
+
+        <!-- Contenu onglet Settings -->
+        <div class="tab-content" id="settings">
+            <p>Contenu Settings...</p>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+        const playerCards = document.querySelectorAll('.player-card');
+
+// Charger la sélection enregistrée
+const savedSelection = localStorage.getItem('selectedPlayer');
+if (savedSelection) {
+    const selectedCard = document.querySelector(`.player-card[data-id="${savedSelection}"]`);
+    if (selectedCard) {
+        selectedCard.classList.add('active');
+    }
+}
+
+playerCards.forEach((card, index) => {
+    // Ajouter un ID unique à chaque carte si non présent
+    if (!card.dataset.id) {
+        card.dataset.id = index + 1;
+    }
+
+    card.addEventListener('click', () => {
+        // Désactive toutes les cartes
+        playerCards.forEach(c => c.classList.remove('active'));
+        
+        // Active la carte cliquée
+        card.classList.add('active');
+
+        // Sauvegarde dans localStorage
+        localStorage.setItem('selectedPlayer', card.dataset.id);
+    });
+});
+
+    </script>
+</body>
+</html>

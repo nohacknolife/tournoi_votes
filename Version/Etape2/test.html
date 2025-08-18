@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoostFiller UI</title>
+    <link rel="stylesheet" href="testStyle.css">
+</head>
+<body>
+    <div class="sidebar">
+        <header class="header">
+            <div class="logo">🚀 BoostFiller</div>
+            <button class="back-btn">← Back</button>
+        </header>
+
+        <!-- Onglets -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="fields">Fields</button>
+            <button class="tab" data-tab="testing">Testing</button>
+            <button class="tab" data-tab="datasets">Datasets</button>
+            <button class="tab" data-tab="settings">Settings</button>
+        </nav>
+
+        <!-- Contenu onglet Fields -->
+        <div class="tab-content active" id="fields">
+            <div class="fields">
+                <div class="field">
+                    <label>full_name</label>
+                    <input type="text" value="John Doe">
+                    <div class="actions">
+                        <button>Generate Data</button>
+                        <select>
+                            <option>Dataset</option>
+                        </select>
+                        <button>Test Regex</button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>email</label>
+                    <input type="text" value="john@doe.com">
+                    <div class="actions">
+                        <button>Generate Data</button>
+                        <select>
+                            <option>Dataset</option>
+                        </select>
+                        <button>Test Regex</button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>full_address</label>
+                    <input type="text" value="25 Union Square W, New York">
+                    <div class="actions">
+                        <button>Generate Data</button>
+                        <select>
+                            <option>Dataset</option>
+                        </select>
+                        <button>Test Regex</button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>phone_number</label>
+                    <input type="text" value="+1 (646) 555-9032">
+                    <div class="actions">
+                        <button>Generate Data</button>
+                        <select>
+                            <option>Dataset</option>
+                        </select>
+                        <button>Test Regex</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenu onglet Testing -->
+        <div class="tab-content" id="testing">
+            <p>Contenu Testing...</p>
+        </div>
+
+        <!-- Contenu onglet Datasets -->
+        <div class="tab-content" id="datasets">
+            <p>Contenu Datasets...</p>
+        </div>
+
+        <!-- Contenu onglet Settings -->
+        <div class="tab-content" id="settings">
+            <p>Contenu Settings...</p>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
