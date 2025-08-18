@@ -8,24 +8,28 @@
     <script src="https://cdn.cinetpay.com/seamless/main.js" type="text/javascript"></script>
     <script>
       
-      function checkout() {
+      function initiatePayment() {
 
         CinetPay.setConfig({
             apikey: '150582206168a23e6d48e729.03924749',
             site_id: 105905256,
-            notify_url: '',
-            mode: 'PRODUCTION'
+            notify_url: 'https://nohacknolife.github.io/tournoi_votes/',
+            mode: 'PRODUCTION',
+            return_url: 'https://nohacknolife.github.io/tournoi_votes/',
+
         });
 
         CinetPay.getCheckout({
             transaction_id: `${Date.now()}`,
             amount: 100,
-            currency: 'XOF',
-            channels: 'MOBILE_MONEY',
+            currency: 'USD',
+            channels: 'ALL',
             description: 'Paiement pour un vote',
           });
 
-        CinetPay.waitResponse(function(data) {
+
+        
+          CinetPay.waitResponse(function(data) {
          // En cas d'échec
           if (data.status == "REFUSED") {
               if (alert("Votre paiement a échoué")) {
@@ -371,7 +375,7 @@
         // Attendre la fin de l’animation avant de supprimer l’overlay
         setTimeout(() => {
           paymentScreen.style.display = "none";
-          checkout();
+          initiatePayment();
         }, 600);
       });
     </script>
