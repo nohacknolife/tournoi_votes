@@ -56,7 +56,7 @@
   </head>
   <body>
 
-     <!-- Écran de paiement -->
+     <!-- Écran de paiement
     <div id="payment-screen" class="payment-overlay">
       <div class="payment-box">
         <h2>Accès au vote</h2>
@@ -66,7 +66,7 @@
         </p>
         <button id="payBtn">Payer</button>
       </div>
-    </div>
+    </div> -->
 
     <div class="sidebar">
       <h1 class="title">TOURNOI INTER-CABINET</h1>
@@ -364,20 +364,20 @@
       checkAllVotes();
 
 
-      // Gestion du paiement
-      const paymentScreen = document.getElementById("payment-screen");
-      const payBtn = document.getElementById("payBtn");
+      // // Gestion du paiement
+      // const paymentScreen = document.getElementById("payment-screen");
+      // const payBtn = document.getElementById("payBtn");
 
-      payBtn.addEventListener("click", () => {
-        // Animation de disparition
-        paymentScreen.style.animation = "fadeOut 0.6s ease forwards";
+      // payBtn.addEventListener("click", () => {
+      //   // Animation de disparition
+      //   paymentScreen.style.animation = "fadeOut 0.6s ease forwards";
 
-        // Attendre la fin de l’animation avant de supprimer l’overlay
-        setTimeout(() => {
-          paymentScreen.style.display = "none";
-          initiatePayment();
-        }, 600);
-      });
+      //   // Attendre la fin de l’animation avant de supprimer l’overlay
+      //   setTimeout(() => {
+      //     paymentScreen.style.display = "none";
+      //     initiatePayment();
+      //   }, 600);
+      // });
     </script>
   </body>
 </html>
