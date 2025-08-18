@@ -60,7 +60,7 @@
           Un droit de participation de <strong>100 F</strong> est requis pour
           voter.
         </p>
-        <button onclick="checkout()" id="payBtn">Payer</button>
+        <button id="payBtn">Payer</button>
       </div>
     </div>
 
@@ -371,7 +371,7 @@
         // Attendre la fin de l’animation avant de supprimer l’overlay
         setTimeout(() => {
           paymentScreen.style.display = "none";
-          initiatePayment();
+          checkout();
         }, 600);
       });
     </script>
