@@ -1,243 +1,260 @@
 body {
-  background-image: url("./images/background.png");
-  background-position: center;
-  background-size: cover;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /*background-color: white;*/
+    background-image: url("./images/bg1.jfif");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 /* Sidebar adaptative avec hauteur réduite */
 .sidebar {
-  background-color: #1a1d23;
-  padding: 20px;
-  border-radius: 8px;
-  color: white;
-  display: flex;
-  flex-direction: column;
+    background-color: #1a1d23;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
 
-  /* 🔹 Ligne à modifier pour augmenter la largeur */
-  width: min(98vw, 1400px); /* Avant : min(95vw, 1200px) */
+    /* 🔹 Ligne à modifier pour augmenter la largeur */
+    width: min(98vw, 1400px);  /* Avant : min(95vw, 1200px) */
 
-  height: min(99vh, 700px);
-  overflow-y: auto;
-  box-sizing: border-box;
+    height: min(99vh, 700px);
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.header img {
+    width: 145px;
+    height: 85px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.welcome {
+  text-align: center;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  color: #bbb;
 }
 
 /* 🔹 Scrollbar assortie au slider */
 .sidebar::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 .sidebar::-webkit-scrollbar-track {
-  background: #1a1d23; /* Couleur du slider */
-  border-radius: 5px;
+    background: #1a1d23; /* Couleur du slider */
+    border-radius: 5px;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-  background: #3b4250; /* Bouton du scroll */
-  border-radius: 5px;
+    background: #3b4250; /* Bouton du scroll */
+    border-radius: 5px;
 }
 
 .sidebar::-webkit-scrollbar-thumb:hover {
-  background: #4b5364;
+    background: #4b5364;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.2em;
-  color: #4ade80;
+    font-weight: bold;
+    font-size: 2.1em;
+    color: #4ade80;
 }
 
 .back-btn {
-  background: none;
-  border: none;
-  color: #aaa;
-  cursor: pointer;
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
 }
 
 .title {
-  text-align: center;
-  color: white;
-  margin-bottom: 15px;
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
 }
 
 .tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .tab {
-  flex: 1;
-  padding: 10px;
-  background-color: #2a2f3a;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
+    flex: 1;
+    padding: 10px;
+    background-color: #2a2f3a;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .tab:hover {
-  background-color: #3b4250;
+    background-color: #3b4250;
 }
 
 .tab.active {
-  background-color: #4ade80;
-  color: black;
+    background-color: #4ade80;
+    color: black;
 }
 
 .tab-content {
-  display: none;
+    display: none;
 }
 
 .tab-content.active {
-  display: block;
+    display: block;
 }
 
 .player-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
 }
 
 /* Grille spécifique pour Équipe Fair-play */
 #equipe-fairplay .player-grid {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 25px; /* plus d’espace entre les logos */
-  justify-items: center; /* centre les logos dans leur colonne */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px; /* plus d’espace entre les logos */
+    justify-items: center; /* centre les logos dans leur colonne */
+}
+
+#equipe-fairplay .player-card p {
+  opacity: 0;
 }
 
 .player-card {
-  background-color: #2a2f3a;
-  border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
-  border: 2px solid transparent;
+    background-color: #2a2f3a;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent;
 }
 
 .player-card img {
-  width: 180px;
-  height: 180px;
-  border-radius: 8px;
-  object-fit: cover;
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 /* Images plus grandes uniquement pour l'onglet Équipe Fair-play */
 #equipe-fairplay .player-card img {
-  width: 240px; /* 2x plus large */
-  height: 240px; /* 2x plus haut */
-  border-radius: 12px; /* un peu plus arrondi pour équilibrer */
-  object-fit: contain; /* affiche le logo entier sans le couper */
-  background-color: #fff; /* fond blanc pour les logos transparents */
-  padding: 10px; /* petit espace autour du logo */
+    width: 240px;   /* 2x plus large */
+    height: 240px;  /* 2x plus haut */
+    border-radius: 12px; /* un peu plus arrondi pour équilibrer */
+    object-fit: contain; /* affiche le logo entier sans le couper */
+    background-color: #fff; /* fond blanc pour les logos transparents */
+    padding: 10px; /* petit espace autour du logo */
 }
 
 .player-card h3 {
-  font-size: 1em;
-  margin: 8px 0 4px;
-  color: white;
+    font-size: 1em;
+    margin: 8px 0 4px;
+    color: white;
 }
 
 .player-card p {
-  font-size: 0.9em;
-  color: #bbb;
+    font-size: 0.9em;
+    color: #bbb;
 }
 
 .player-card:hover {
-  background-color: #3b4250;
+    background-color: #3b4250;
 }
 
 .player-card.active {
-  border: 2px solid #4ade80;
-  background-color: #3b4250;
+    border: 2px solid #4ade80;
+    background-color: #3b4250;
 }
 
 .fields {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .field {
-  background-color: #2a2f3a;
-  padding: 10px;
-  border-radius: 6px;
+    background-color: #2a2f3a;
+    padding: 10px;
+    border-radius: 6px;
 }
 
 .field label {
-  display: block;
-  font-size: 0.9em;
-  margin-bottom: 5px;
-  color: #bbb;
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #bbb;
 }
 
 .field input {
-  width: 100%;
-  padding: 8px;
-  background-color: #1a1d23;
-  border: 1px solid #444;
-  border-radius: 4px;
-  color: white;
+    width: 100%;
+    padding: 8px;
+    background-color: #1a1d23;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: white;
 }
 
 .actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
 }
 
 .actions button,
 .actions select {
-  background-color: #3b4250;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  color: #ddd;
-  cursor: pointer;
+    background-color: #3b4250;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: #ddd;
+    cursor: pointer;
 }
 
 .actions button:hover,
 .actions select:hover {
-  background-color: #4b5364;
+    background-color: #4b5364;
 }
 
 .testing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
 }
 
 #sendAll {
-  position: absolute;
-  bottom: 20px;
-  left: 5%; /* retrait en pourcentage */
-  right: 5%; /* retrait en pourcentage */
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: not-allowed;
-  background-color: #555; /* gris par défaut */
-  color: white;
-  transition: background-color 0.3s, cursor 0.3s;
+    position: absolute;
+    bottom: 20px;
+    left: 5%;   /* retrait en pourcentage */
+    right: 5%;  /* retrait en pourcentage */
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: not-allowed; 
+    background-color: #555; /* gris par défaut */
+    color: white;
+    transition: background-color 0.3s, cursor 0.3s;
 }
 
 #sendAll.active {
-  background-color: #4ade80; /* vert actif */
-  cursor: pointer;
+    background-color: #4ade80; /* vert actif */
+    cursor: pointer;
 }
+

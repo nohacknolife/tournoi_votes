@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoostFiller UI</title>
+    <link rel="stylesheet" href="testStyle.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+        <div class="header">
+            <img src="images/TIC.png" alt="AZIZ TOURÉ" />
+            <div class="logo">TOURNOI INTER-CABINET</div>
+            <button class="back-btn" onclick="logout()">Déconnexion</button>
+        </div>
+
+        <div class="welcome" id="welcomeMsg"></div>
+
+      <nav class="tabs">
+        <button class="tab active" data-target="meilleur-joueur">
+          Meilleur joueur
+        </button>
+        <button class="tab" data-target="meilleur-gardien">
+          Meilleur gardien
+        </button>
+        <button class="tab" data-target="equipe-fairplay">
+          Équipe fair-play
+        </button>
+        <button class="tab" data-target="revelation-match">
+          Révélation du match
+        </button>
+      </nav>
+
+      <div class="tab-content active" id="meilleur-joueur">
+        <div class="player-grid">
+          <div class="player-card" data-id="mj1">
+      <img src="images/MVP/CHRIST.jpeg" alt="CHRIST GOHOU" />
+      <h3>CHRIST GOHOU</h3>
+      <p>ESP</p>
+    </div>
+
+    <div class="player-card" data-id="mj2">
+      <img src="images/MVP/CHEICK.jpeg" alt="CHEICK SANY" />
+      <h3>CHEICK SANY</h3>
+      <p>KPMG</p>
+    </div>
+
+    <div class="player-card" data-id="mj3">
+      <img src="images/MVP/ADEPO.jpeg" alt="ADEPO SAMUEL" />
+      <h3>ADEPO SAMUEL</h3>
+      <p>BRIDGE</p>
+    </div>
+          <!-- autres joueurs -->
+        </div>
+      </div>
+      <div class="tab-content" id="meilleur-gardien">
+    <div class="player-grid">
+
+        <div class="player-card" data-id="mg1">
+            <img src="images/guard/WILFRIED.jpeg" alt="WILFRIED OULAÏ" />
+            <h3>WILFRIED OULAÏ</h3>
+            <p>KPMG</p>
+        </div>
+
+        <div class="player-card" data-id="mg2">
+            <img src="images/guard/N’GUESSAN.jpeg" alt="N’GUESSAN LEVI" />
+            <h3>N’GUESSAN LEVI</h3>
+            <p>BRIDGE</p>
+        </div>
+
+        <div class="player-card" data-id="mg3">
+            <img src="images/guard/ADIGRA.jpeg" alt="ADIGRA ZOLA" />
+            <h3>ADIGRA ZOLA</h3>
+            <p>ESP</p>
+        </div>
+
+        <div class="player-card" data-id="mg4">
+            <img src="images/guard/EMMANUEL.jpeg" alt="EMMANUEL OBROU" />
+            <h3>EMMANUEL OBROU</h3>
+            <p>Y3</p>
+        </div>
+    </div>
+    </div>
+
+      <div class="tab-content" id="equipe-fairplay">
+  <div class="player-grid">
+
+    <div class="player-card" data-id="fp1">
+      <img src="images/fair-play/forvismaz.jpeg" alt="Forvis Mazars" />
+      <h3>Forvis Mazars</h3>
+      <p>EY</p>
+    </div>
+
+    <div class="player-card" data-id="fp2">
+      <img src="images/fair-play/Y3.jpeg" alt="Y3" />
+      <h3>Y3</h3>
+      <p>EY</p>
+    </div>
+
+    <div class="player-card" data-id="fp3">
+      <img src="images/fair-play/GrantTH.jpeg" alt="Grant Thornton" />
+      <h3>Grant Thornton</h3>
+      <p>EY</p>
+    </div>
+
+    <div class="player-card" data-id="fp4">
+      <img src="images/fair-play/EY.jpeg" alt="EY" />
+      <h3>EY</h3>
+      <p>EY</p>
+    </div>
+
+    <div class="player-card" data-id="fp5">
+      <img src="images/fair-play/ESP.jpeg" alt="ESP" />
+      <h3>ESP</h3>
+      <p>EY</p>
+    </div>
+
+    <div class="player-card" data-id="fp6">
+      <img src="images/fair-play/KPMG.jpeg" alt="KPMG" />
+      <h3>KPMG</h3>
+      <p>EY</p>
+    </div>
+
+    <div class="player-card" data-id="fp7">
+      <img src="images/fair-play/BDO.jpeg" alt="BDO" />
+      <h3>BDO</h3>
+      <p>EY</p>
+    </div>
+
+    <div class="player-card" data-id="fp8">
+      <img src="images/fair-play/DELOITTE.jpeg" alt="Deloitte" />
+      <h3>Deloitte</h3>
+      <p>EY</p>
+    </div>
+
+    <div class="player-card" data-id="fp9">
+      <img src="images/fair-play/BRIDGE.jpeg" alt="Bridge" />
+      <h3>Bridge</h3>
+      <p>EY</p>
+    </div>
+
+  </div>
+</div>
+
+    <div class="tab-content" id="revelation-match">
+    <div class="player-grid">
+
+        <div class="player-card" data-id="rv1">
+        <img src="images/AZIZ.jpeg" alt="AZIZ TOURÉ" />
+        <h3>AZIZ TOURÉ</h3>
+        <p>EY</p>
+        </div>
+
+        <div class="player-card" data-id="rv2">
+        <img src="images/Cheick-HASSAN.jpeg" alt="Cheick-HASSAN" />
+        <h3>Cheick-HASSAN</h3>
+        <p>FORV/MAZARS</p>
+        </div>
+
+        <div class="player-card" data-id="rv3">
+        <img src="images/ASSI.jpeg" alt="ASSI YAACOV" />
+        <h3>ASSI YAACOV</h3>
+        <p>ESP</p>
+        </div>
+
+        <div class="player-card" data-id="rv4">
+        <img src="images/Sylla.jpeg" alt="Sylla Mohamed" />
+        <h3>Sylla Mohamed</h3>
+        <p>Y3</p>
+        </div>
+
+    </div>
+    </div>
+
+      <!-- Bouton fixe dans la sidebar -->
+      <div class="send-btn-container">
+        <button id="sendAll" disabled>Envoyer</button>
+      </div>
+    </div>
+
+    <script>
+      // Gestion des tabs
+      const tabs = document.querySelectorAll(".tab");
+      const tabContents = document.querySelectorAll(".tab-content");
+      const sendAllBtn = document.getElementById("sendAll");
+        // Récupération des infos stockées
+    const user = localStorage.getItem("voter_name");
+    const email = localStorage.getItem("voter_email");
+
+    // Affichage du message d'accueil
+    document.getElementById("welcomeMsg").innerText = `Bienvenue, ${user}`;
+
+    // Fonction de déconnexion
+    function logout() {
+    localStorage.removeItem("voter_name");
+    localStorage.removeItem("voter_email");
+    window.location.href = "Accueil.html"; // ta page d’accueil
+    }
+      // Ouvrir le bon onglet
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          const target = tab.dataset.target;
+          tabContents.forEach((content) => {
+            content.classList.remove("active");
+            if (content.id === target) content.classList.add("active");
+          });
+        });
+      });
+
+      // Sélection unique par catégorie
+      document.querySelectorAll(".player-grid").forEach((grid) => {
+        const cards = grid.querySelectorAll(".player-card");
+        const category = grid.parentElement.id;
+
+        const savedSelection = JSON.parse(
+          localStorage.getItem(`selected_${category}`)
+        );
+        if (savedSelection) {
+          const selectedCard = grid.querySelector(
+            `.player-card[data-id="${savedSelection["id"]}"]`
+          );
+          if (selectedCard) selectedCard.classList.add("active");
+        }
+
+        cards.forEach((card) => {
+          card.addEventListener("click", () => {
+            cards.forEach((c) => c.classList.remove("active"));
+            card.classList.add("active");
+            const nom = card.querySelector("h3").textContent;
+            const equipe = card.querySelector("p").textContent;
+
+            // Tu peux stocker un objet avec nom + équipe + id
+            const data = {
+              id: card.dataset.id,
+              nom: nom,
+              equipe: equipe,
+            };
+            console.log(data);
+            localStorage.setItem(`selected_${category}`, JSON.stringify(data));
+            checkAllVotes();
+          });
+        });
+      });
+
+      // Vérifie si tous les votes sont faits
+      function checkAllVotes() {
+        const categories = [
+          "meilleur-joueur",
+          "meilleur-gardien",
+          "equipe-fairplay",
+          "revelation-match",
+        ];
+        const allVoted = categories.every((cat) =>
+          localStorage.getItem(`selected_${cat}`)
+        );
+
+        if (allVoted) {
+          sendAllBtn.classList.add("active");
+          sendAllBtn.disabled = false;
+        } else {
+          sendAllBtn.classList.remove("active");
+          sendAllBtn.disabled = true;
+        }
+      }
+
+      document.getElementById("sendAll").addEventListener("click", () => {
+        //const user = prompt("Entrez votre nom :");
+        //const email = prompt("Entrez votre email :");
+        // Préparer les votes
+        const votes = {
+          "Meilleur joueur": JSON.parse(
+            localStorage.getItem("selected_meilleur-joueur") || "{}"
+          ),
+          "Meilleur gardien": JSON.parse(
+            localStorage.getItem("selected_meilleur-gardien") || "{}"
+          ),
+          "Équipe fair-play": JSON.parse(
+            localStorage.getItem("selected_equipe-fairplay") || "{}"
+          ),
+          "Révélation du match": JSON.parse(
+            localStorage.getItem("selected_revelation-match") || "{}"
+          ),
+        };
+
+          const myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
+
+          const payload = {
+            user: user,
+            email: email,
+            votes: votes,
+          };
+
+          const requestOptions = {
+            method: "POST",
+            mode: "no-cors",
+            headers: myHeaders,
+            body: JSON.stringify(payload),
+            redirect: "follow",
+          };
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbzqrocxHIMVRRZUo01M628XdVhu-Hc2oPYEH1dFV7EzC7e8T-tyGYS3EvZ0b7B-YSFS/exec",
+            requestOptions
+          )
+            .then((response) => console.log(response))
+            .then((result) => console.log(result))
+            .catch((error) => console.error(error));
+
+        alert("Tous les votes ont été envoyés ✅");
+      });
+
+      // Lancer le check au chargement
+      checkAllVotes();
+    </script>
+  </body>
+</html>
+
